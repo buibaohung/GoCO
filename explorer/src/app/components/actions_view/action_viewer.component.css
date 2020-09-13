@@ -1,0 +1,16 @@
+.main-container-actions{
+	display: flex;
+}
+.actions-list-view{
+	margin-left: 10px;
+	display: flex;
+}
+.actions-list-view::first-child{
+	margin-left: 0px;
+}
+.resources{
+	margin-right: 5px;
+}
+.memo-less-then-length{
+	width: auto !important;
+}

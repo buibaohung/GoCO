@@ -1,0 +1,784 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
+    "version": "eosio::abi/1.1",
+    "types": [],
+    "structs": [
+        {
+            "name": "balance",
+            "base": "",
+            "fields": [
+                {
+                    "name": "funds",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "clearevent",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "clearfacilit",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "clearpitem",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "clearproduct",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "clearratting",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "clearvotrat",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "delfacility",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "name": "delproduct",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "delproimage",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "delproimages",
+            "base": "",
+            "fields": [
+                {
+                    "name": "productId",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "delproitem",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "delratting",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "delvoterat",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "rattingId",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "dislikerat",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "rattingId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "stakeAmount",
+                    "type": "int64"
+                }
+            ]
+        },
+        {
+            "name": "event",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "productItemId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "name": "createdAt",
+                    "type": "int64"
+                },
+                {
+                    "name": "fromFacilityId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "toFacilityId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "deliveredByFacilityId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "soldAt",
+                    "type": "int64"
+                },
+                {
+                    "name": "fromProductItemId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "toProductItemId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "quality",
+                    "type": "int32"
+                },
+                {
+                    "name": "productItemIds",
+                    "type": "uint64[]"
+                }
+            ]
+        },
+        {
+            "name": "facility",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user",
+                    "type": "name"
+                },
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "email",
+                    "type": "string"
+                },
+                {
+                    "name": "phone_number",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "website",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "likerat",
+            "base": "",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "rattingId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "stakeAmount",
+                    "type": "int64"
+                }
+            ]
+        },
+        {
+            "name": "newevent",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "productItemId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "name": "createdAt",
+                    "type": "int64"
+                },
+                {
+                    "name": "fromFacilityId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "toFacilityId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "deliveredByFacilityId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "soldAt",
+                    "type": "int64"
+                },
+                {
+                    "name": "fromProductItemId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "toProductItemId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "quality",
+                    "type": "int32"
+                },
+                {
+                    "name": "productItemIds",
+                    "type": "uint64[]"
+                }
+            ]
+        },
+        {
+            "name": "newfacility",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user",
+                    "type": "name"
+                },
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "email",
+                    "type": "string"
+                },
+                {
+                    "name": "phone_number",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "website",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "newpitem",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "productId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "price",
+                    "type": "uint64"
+                },
+                {
+                    "name": "fromProductItemId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "expiryDate",
+                    "type": "int64"
+                }
+            ]
+        },
+        {
+            "name": "newproduct",
+            "base": "",
+            "fields": [
+                {
+                    "name": "facility_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "name": "avatar",
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "newproimage",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "productId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "ipfsHash",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "newratting",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "productId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "content",
+                    "type": "string"
+                },
+                {
+                    "name": "star",
+                    "type": "uint64"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "stakeAmount",
+                    "type": "int64"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "name": "facility_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "avatar",
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "productimage",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "imageId",
+                    "type": "string"
+                },
+                {
+                    "name": "productId",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "productitem",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "productId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "price",
+                    "type": "uint64"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "fromProductItemId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "expiryDate",
+                    "type": "int64"
+                }
+            ]
+        },
+        {
+            "name": "ratting",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "productId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "content",
+                    "type": "string"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "star",
+                    "type": "uint64"
+                },
+                {
+                    "name": "stake",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "updproduct",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "name": "avatar",
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "voteratting",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "rattingId",
+                    "type": "uint64"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "like",
+                    "type": "int8"
+                },
+                {
+                    "name": "stake",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "withdraw",
+            "base": "",
+            "fields": [
+                {
+                    "name": "hodler",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "int64"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "clearevent",
+            "type": "clearevent",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "clearfacilit",
+            "type": "clearfacilit",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "clearpitem",
+            "type": "clearpitem",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "clearproduct",
+            "type": "clearproduct",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "clearratting",
+            "type": "clearratting",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "clearvotrat",
+            "type": "clearvotrat",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "delfacility",
+            "type": "delfacility",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "delproduct",
+            "type": "delproduct",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "delproimage",
+            "type": "delproimage",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "delproimages",
+            "type": "delproimages",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "delproitem",
+            "type": "delproitem",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "delratting",
+            "type": "delratting",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "delvoterat",
+            "type": "delvoterat",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "dislikerat",
+            "type": "dislikerat",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "likerat",
+            "type": "likerat",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "newevent",
+            "type": "newevent",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "newfacility",
+            "type": "newfacility",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "newpitem",
+            "type": "newpitem",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "newproduct",
+            "type": "newproduct",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "newproimage",
+            "type": "newproimage",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "newratting",
+            "type": "newratting",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "updproduct",
+            "type": "updproduct",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "withdraw",
+            "type": "withdraw",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "balance",
+            "type": "balance",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "event",
+            "type": "event",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "facility",
+            "type": "facility",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "product",
+            "type": "product",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "productimage",
+            "type": "productimage",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "productitem",
+            "type": "productitem",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "ratting",
+            "type": "ratting",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "voteratting",
+            "type": "voteratting",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": []
+}

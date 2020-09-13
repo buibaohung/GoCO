@@ -1,0 +1,47 @@
+.account-info{
+	font-size: 13px;
+	margin-left: 10px;
+}
+.account-info:first-child{
+	margin-left: 0px;
+}
+small {
+    font-size: 13px;
+}
+.producer-candidate{
+	margin-top: 47px;
+}
+.branding-logo{
+	width: 60px;
+	border-radius: 50%;
+}
+.account-name{
+	margin-top: 22px;
+	display: table;
+}
+.social-links{
+	text-decoration: none;
+	cursor: pointer;
+	margin-left: 10px;
+	color: #9f9fa1;
+	font-size: 18px;
+}
+.social-links:first-child{
+	margin-left: 0;
+}
+.social-links:hover{
+	color: #333;
+}
+.small-tokens{
+    padding: 10px 15px;
+    background: #f1f1f2;
+    margin: 7px 5px;
+    display: table;
+    float: left;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #444;
+}
+.tokens-container{
+	margin-left: -5px;
+}

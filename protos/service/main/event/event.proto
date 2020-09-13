@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package service.main.event;
+option go_package = "event";
+
+import "domain/domain.proto";
+
+service Event {
+    rpc GetByNameAndProductItemID(GetByNameAndProductItemIDRequest) returns (GetByNameAndProductItemIDResponse);
+}
+
+message GetByNameAndProductItemIDRequest {
+    string product_item_id = 1;
+    string name = 2;
+}
+
+message GetByNameAndProductItemIDResponse {
+    repeated domain.Event events = 1;
+}

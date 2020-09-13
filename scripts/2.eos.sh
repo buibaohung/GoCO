@@ -1,0 +1,1 @@
+docker build -t eosio/eos:v1.7.5 ./eos

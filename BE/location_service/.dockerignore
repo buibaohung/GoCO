@@ -1,0 +1,7 @@
+/vendor/
+/Godeps/
+/bin/
+/docker-compose/
+dockerfile
+.env
+.gitignore

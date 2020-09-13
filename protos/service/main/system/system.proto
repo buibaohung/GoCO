@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package service.main.system;
+option go_package = "system";
+
+service System {
+    rpc NextID(NextIDRequest) returns (NextIDResponse);
+}
+
+message NextIDRequest {
+    string table = 1;
+}
+
+message NextIDResponse {
+    string id = 1;
+}

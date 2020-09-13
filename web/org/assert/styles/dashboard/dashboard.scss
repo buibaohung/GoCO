@@ -1,0 +1,50 @@
+@import  '../mixin/color.scss';
+
+.container{
+    min-height: 100vh;
+}
+
+.sider{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    position: fixed;
+    background-color: $primary-color;
+    left: 0;
+}
+
+.header{
+    background: #fff;
+    padding: 0;
+    position: fixed;
+    z-index: 1;
+    padding: 0 24px;
+}
+
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+        color: #1890ff;
+    }
+}
+
+.logo{
+    width: 120px;
+    height: 32px;
+    margin: 16px;;
+    cursor: pointer;
+}
+
+.logo-svg{
+    fill: #fff;
+    vertical-align: middle;
+    height: 32px;
+}
+
+.menu{
+    background-color: $primary-color;
+}

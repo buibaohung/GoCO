@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  nodeosd:
+    image: eostudio/eos:v1.8.5
+    command: nodeos --config /opt/eosio/nodeos/config/config.ini --genesis-json /opt/eosio/genesis.json --data-dir /opt/eosio/bin/data-dir --producer-name producer1 -e --http-alias=nodeosd:8888 --http-alias=127.0.0.1:8888 --http-alias=localhost:8888
+    hostname: nodeosd
+    ports:
+      - 8888:8888
+      - 9876:9876
+    volumes:
+      - nodeos-data-volume:/opt/eosio/bin/data-dir
+      - ./eos/config.ini:/opt/eosio/nodeos/config/config.ini
+      - ./eos/genesis.json:/opt/eosio/genesis.json
+      - ./contract:/contract
+    cap_add:
+      - IPC_LOCK
+    stop_grace_period: 10m
+
+  keosd:
+    image: eostudio/eos:v1.8.5
+    command: keosd --http-server-address=0.0.0.0:8899 --http-alias=keosd:8899 --http-alias=localhost:8899
+    hostname: keosd
+    volumes:
+      - keosd-data-volume:/opt/eosio/bin/data-dir
+    stop_grace_period: 10m
+
+volumes:
+  nodeos-data-volume:
+    # external: true
+  keosd-data-volume:
+    # external: true

@@ -1,0 +1,19 @@
+{
+  "name": "syncer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "build": "docker build -t syncer_service ."
+  },
+  "dependencies": {
+    "@dfuse/client": "^0.3.0",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.2",
+    "ws": "^7.2.0"
+  }
+}

@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package domain;
+option go_package = "domain";
+
+message EosAccount {
+    string name = 1;
+    string private_key = 2;
+    string public_key = 3;
+}
+
+message QueryOrder {
+    string order_field = 1;
+    string order_by = 2;
+}
+
+message Pagination {
+    int32 offset = 1;
+    int32 limit = 2;
+    int32 size = 3;
+}
+
+message Facility {
+    string id = 1;
+    string name = 2;
+    string eos_username = 3;
+    string type = 4;
+    string email = 5;
+    string phone_number = 6;
+    string location = 7;
+    string website = 8;
+}
+
+message Product {
+    string id = 1;
+    string name = 2;
+    string avatar = 3;
+    string facility_id = 4;
+    string description = 6;
+    int64 created_at = 7;
+    int64 updated_at = 8;
+}
+
+message ProductItem {
+    string id = 1;
+    string product_id = 2;
+    int32 price = 6;
+    string owner = 3;
+    string from_product_item_id = 4;
+    int64 expiry_date_timestamp = 5;
+}
+
+message ProductImage {
+    string id = 1;
+    string product_id = 2;
+    string image_id = 3;
+}
+
+message Event {
+    string id = 1;
+    string product_item_id = 2;
+    string name = 3;
+    int64 created_at = 4;
+    string from_facility_id = 5;
+    string to_facility_id = 6;
+    string delivered_by_facility_id = 7;
+    int64 sold_at = 8;
+    string from_product_item_id = 9;
+    string to_product_item_id = 10;
+    int32 quality = 11;
+    repeated string product_item_ids = 12;
+}
+
+enum FacilityType {
+    FARMER = 0;
+    SUPPLIER = 1;
+    FACTORY = 2;
+    DISTRIBUTION = 3;
+    RETAIL = 4;
+    CUSTOMER = 5;
+}
+
+message Nil {
+}
+
+message Response {
+    int32 status = 1;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package service.main.facility;
+option go_package = "facility";
+
+import "domain/domain.proto";
+
+service Facility {
+    rpc GetFacilities(GetFacilitiesRequest) returns (GetFacilitiesResponse);
+}
+
+message GetFacilitiesRequest {
+    string type = 1;
+}
+
+message GetFacilitiesResponse {
+    repeated domain.Facility facilities = 1;
+}

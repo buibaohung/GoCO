@@ -1,0 +1,110 @@
+@import  './mixin/device.scss';
+@import  './mixin/color.scss';
+
+.header{
+    background-color: transparent;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    @include Responsive($sm) {
+        padding: 0 50px;
+    }
+
+    .logo{
+        width: 120px;
+        cursor: pointer;
+    }
+
+    .logo-svg{
+        fill: #fff;
+        vertical-align: middle;
+    }
+    
+    .menu{
+        background-color: transparent;
+        border-bottom: 0;
+        color: #fff;
+        display: none;
+
+        @include Responsive($sm) {
+            display: block;
+        }
+    }
+
+    .btn-started{
+        background-color: #1b5e20;
+        display: none;
+
+        @include Responsive($sm) {
+            display: block;
+        }
+    }
+
+    .btn-menu{
+        display: block;
+
+        @include Responsive($sm) {
+            display: none;
+        }
+    }
+}
+
+.particles{
+    background-color: $primary-color;
+    position: relative;
+    min-height: 100vh;
+
+    .particles-container{
+        height: 100vh;
+    }
+
+    .particles-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 50px 0;
+        flex-direction: column-reverse;
+
+        @include Responsive($sm) {
+            flex-direction: row;
+        }
+
+        &>*{
+            padding: 0 20px;
+            flex: 1;
+
+            @include Responsive($sm) {
+                padding: 0 50px;
+            }
+        }
+
+        .slogan{
+            color: #fff;
+            text-align: center;
+            font-size: 30px;
+
+            @include Responsive($sm) {
+                text-align: left;
+                font-size: 40px;
+            }
+        }
+
+        .banner-img{
+            margin: 50px;
+            width: 100%;
+
+            @include Responsive($sm) {
+                margin: 0;
+            }
+        }
+    }
+}

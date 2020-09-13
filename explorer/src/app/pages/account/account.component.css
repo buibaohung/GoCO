@@ -1,0 +1,32 @@
+.account-info{
+	font-size: 13px;
+	margin-left: 10px;
+}
+.account-info:first-child{
+	margin-left: 0px;
+}
+small {
+    font-size: 13px;
+}
+.account-address{
+	flex: 5 !important;
+}
+.controlled-acc{
+	margin-top: 15px;
+}
+.small-tokens{
+    padding: 10px 15px;
+    background: #f1f1f2;
+    margin: 7px 5px;
+    display: table;
+    float: left;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #444;
+}
+.tokens-container{
+	margin-left: -5px;
+}
+.multisig-container{
+    margin-bottom: 7px;
+}

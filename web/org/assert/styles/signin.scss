@@ -1,0 +1,41 @@
+@import  './mixin/color.scss';
+
+.container{
+    background-color: $primary-color;
+    height: 100vh;
+}
+
+.particles-container{
+    height: 100vh;
+    position: relative;
+}
+
+.overlay-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.overlay-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    padding: 64px 0;
+}
+
+.logo{
+    width: 120px;
+    position: fixed;
+    top: 17px;
+    left: 50px;
+    cursor: pointer;
+}
+
+.logo-svg{
+    fill: #fff;
+    vertical-align: middle;
+}

@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package service.main.product;
+option go_package = "product";
+
+import "domain/domain.proto";
+
+service Product {
+    rpc Create(CreateRequest) returns (domain.Product);
+    rpc GetByID(GetByIDRequest) returns (GetByIDResponse);
+    rpc Delete(DeleteRequest) returns (domain.Response);
+    rpc GetByFacilityID(GetByFacilityIDRequest) returns (GetByFacilityIDResponse);
+    rpc Update(domain.Product) returns (domain.Product);
+}
+
+message CreateRequest {
+    domain.Product product = 1;
+    repeated string images = 2;
+}
+
+message GetByIDRequest {
+    string product_id = 1;
+    string product_item_id = 2;
+}
+
+message GetByIDResponse {
+    domain.Product product = 1;
+    float rating = 2;
+    repeated string images = 3;
+    repeated domain.ProductImage raw_images = 4;
+}
+
+message DeleteRequest {
+    string product_id = 1;
+}
+
+message GetByFacilityIDRequest {
+    string facility_id = 1;
+    domain.QueryOrder order = 2;
+    domain.Pagination pagination = 3;
+}
+
+message GetByFacilityIDResponse {
+    repeated domain.Product products = 1;
+    int32 count = 2;
+}

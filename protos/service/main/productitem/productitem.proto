@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package service.main.productitem;
+option go_package = "productitem";
+
+import "domain/domain.proto";
+
+service ProductItem {
+    rpc Create(domain.ProductItem) returns (domain.ProductItem);
+    rpc Delete(DeleteRequest) returns (domain.Response);
+    rpc GetByFacilityID(GetByFacilityIDRequest) returns (GetByFacilityIDResponse);
+}
+
+message DeleteRequest {
+    string product_item_id = 1;
+}
+
+message GetByFacilityIDRequest {
+    string facility_id = 1;
+    domain.QueryOrder order = 2;
+    domain.Pagination pagination = 3;
+}
+
+message GetByFacilityIDResponse {
+    repeated domain.ProductItem product_items = 1;
+    int32 count = 2;
+}

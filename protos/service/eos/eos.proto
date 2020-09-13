@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+package service.eos;
+option go_package = "eos";
+
+import "domain/domain.proto";
+
+service EOS {
+    rpc NewEOSAccount(domain.Nil) returns (domain.EosAccount);
+
+    rpc NewFacility(domain.Facility) returns (domain.Response);
+    rpc GetFacilityEOSName(domain.EosAccount) returns (domain.Facility);
+    rpc GetFacilityByID(GetByIDRequest) returns (domain.Facility);
+
+    rpc NewProduct(NewProductRequest) returns (domain.Response);
+    rpc DeleteProduct(DeleteProductRequest) returns (domain.Response);
+    rpc UpdateProduct(UpdateProductRequest) returns (domain.Response);
+    rpc GetProductByID(GetByIDRequest) returns (domain.Product);
+
+    rpc NewProductItem(NewProductItemRequest) returns (domain.Response);
+    rpc DeleteProductItem(DeleteProductItemRequest) returns (domain.Response);
+    rpc GetProductItemByID(GetByIDRequest) returns (domain.ProductItem);
+
+    rpc NewProductImage(NewProductImageRequest) returns (domain.Response);
+    rpc DeleteProductImage(DeleteProductImageRequest) returns (domain.Response);
+    rpc DeleteAllProductImages(DeleteAllProductImagesRequest) returns (domain.Response);
+
+    rpc NewEvent(NewEventRequest) returns (domain.Response);
+
+    rpc GetPubFromPriv(GetPubFromPrivRequest) returns (GetPubFromPrivResponse);
+    rpc GetNameFromPub(GetNameFromPubRequest) returns (GetNameFromPubResponse);
+    rpc GetPubFromName(GetPubFromNameRequest) returns (GetPubFromNameResponse);
+}
+
+message GetByIDRequest {
+    string id = 1;
+}
+
+message NewProductRequest {
+    domain.Product product = 1;
+    domain.EosAccount eos_account = 2;
+}
+
+message DeleteProductRequest {
+    string product_id = 1;
+    domain.EosAccount eos_account = 2;
+}
+
+message UpdateProductRequest {
+    string product_id = 3;
+    domain.Product product = 1;
+    domain.EosAccount eos_account = 2;
+}
+
+message NewProductItemRequest {
+    domain.ProductItem product_item = 1;
+    domain.EosAccount eos_account = 2;
+}
+
+message DeleteProductItemRequest {
+    string product_item_id = 1;
+    domain.EosAccount eos_account = 2;
+}
+
+message NewProductImageRequest {
+    domain.ProductImage product_image = 1;
+    domain.EosAccount eos_account = 2;
+}
+
+message DeleteProductImageRequest {
+    string id = 1;
+    domain.EosAccount eos_account = 2;
+}
+
+message DeleteAllProductImagesRequest {
+    string product_id = 1;
+    domain.EosAccount eos_account = 2;
+}
+
+message NewEventRequest {
+    domain.Event event = 1;
+    domain.EosAccount eos_account = 2;
+}
+
+message GetPubFromPrivRequest {
+    string private_key = 1;
+}
+
+message GetPubFromPrivResponse {
+    string public_key = 1;
+}
+
+message GetNameFromPubRequest {
+    string public_key = 1;
+}
+
+message GetNameFromPubResponse {
+    string name = 1;
+}
+
+message GetPubFromNameRequest {
+    string name = 1;
+}
+
+message GetPubFromNameResponse {
+    string public_key = 1;
+}
