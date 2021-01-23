@@ -10,7 +10,6 @@ services:
       - .env
     networks:
       - ipfsbr
-      - network-app
 
   dbOrg1:
     image: postgres:11.5-alpine
