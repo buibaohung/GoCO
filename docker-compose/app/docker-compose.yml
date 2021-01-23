@@ -4,6 +4,9 @@ services:
   eos:
     image: eos_service:latest
     restart: always
+    ports:
+      - 50051
+      - 4000
   app:
     image: main_service:latest
     restart: always
@@ -26,7 +29,20 @@ services:
     image: location_service:latest
     restart: always
     ports:
-      - 3002:3001
+      - 3002:3006
+  syncer:
+    image: syncer:latest
+    restart: always
+    environment:
+      DFUSE_API_KEY: server_956fa3438e0a2e717b5e886822b33c6a
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_USER: '${POSTGREST_DB_USER}'
+      PG_PASS: '${POSTGREST_DB_PASSWORD}'
+      PG_DBNAME: '${POSTGREST_DB_NAME}'
+      CONTRACT: dgybsotylyeq
+      EOS_SERV_BASE_URL: http://eos:4000
+
   webapp:
     image: webapp:latest
     restart: always
