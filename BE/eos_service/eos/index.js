@@ -72,6 +72,7 @@ class EOS {
 
         // add new key
         privateKeys = privateKeys.concat(newKeys)
+        console.log("add new key", privateKeys)
 
         // init api
 
