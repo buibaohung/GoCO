@@ -18,7 +18,7 @@ openssl genrsa -des3 -out server.key -passout pass:$SERVER_PASS 4096
 openssl req -new -key server.key -out server.csr -passin pass:$SERVER_PASS -subj "/C=VN/ST=HCM/L=HCM/O=HDT Ltd/OU=HTD Ltd/CN=fotra.com"
 
 # Self-sign server certificate:
-openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out server.crt -passin pass:$CA_PASS
+openssl x509 -req -days 3650 -in server.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out server.crt -passin pass:$CA_PASS
 
 # Remove passphrase from the server key:
 openssl rsa -in server.key -out server.key -passin pass:$SERVER_PASS
