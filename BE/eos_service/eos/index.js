@@ -128,6 +128,8 @@ class EOS {
             this.addKeyToJsSignatureProvider([_eosKey])
         }
 
+        console.log("xxxx", _eosKey)
+
         return this.api.transact({
             actions: [{
                 account: this.contract,
