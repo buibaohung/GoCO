@@ -6,11 +6,4 @@ RUN yarn && \
     yarn cache clean && \
     yarn fetch-pkg
 COPY . .
-RUN yarn build && yarn dist
-
-FROM alpine:3.9
-RUN apk add --no-cache libstdc++
-WORKDIR /
-ENV NODE_ENV production
-COPY --from=builder /app/dist/my-app app
-CMD ["/app"]
+CMD ["yarn", "dev"]
