@@ -10,6 +10,7 @@ services:
       - .env
     networks:
       - ipfsbr
+      - default
 
   dbOrg1:
     image: postgres:11.5-alpine
