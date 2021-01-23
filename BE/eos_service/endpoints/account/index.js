@@ -68,7 +68,7 @@ exports.getNameFromPub = (pub) => {
 
 exports.getPubFromName = async (name) => {
     let acccount = await eos.rpc.get_account(name)
-    let permission = acccount.permissions.find(p => p.perm_name == "active")
+    let permission = acccount.permissions.find(p => p.perm_name == "owner")
     if (!permission) {
         throw "can't find permission"
     }
