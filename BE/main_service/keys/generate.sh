@@ -31,7 +31,7 @@ openssl genrsa -des3 -out client.key -passout pass:$CLIENT_PASS 4096
 openssl req -new -key client.key -out client.csr -passin pass:$CLIENT_PASS -subj "/C=VN/ST=HCM/L=HCM/O=HDT Ltd/OU=HTD Ltd/CN=fotra.com"
 
 # Self-sign client certificate:
-openssl x509 -req -days 365 -in client.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out client.crt -passin pass:$CA_PASS
+openssl x509 -req -days 3650 -in client.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out client.crt -passin pass:$CA_PASS
 
 # Remove passphrase from the client key:
 openssl rsa -in client.key -out client.key -passin pass:$CLIENT_PASS
