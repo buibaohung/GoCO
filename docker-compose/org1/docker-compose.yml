@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  org1:
+    image: org_service:latest
+    restart: always
+    ports:
+      - 3001:3005
+    env_file:
+      - .env
+
+  dbOrg1:
+    image: postgres:11.5-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: '${POSTGREST_DB_USER}'
+      POSTGRES_PASSWORD: '${POSTGREST_DB_PASSWORD}'
+      POSTGRES_DB: '${POSTGREST_DB_NAME}'
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  webapp1:
+    image: webapp_org:latest
+    restart: always
+    environment:
+      PORT: 3000
+      API_BASE_URL: https://api.org1.goco.ml
+    ports:
+      - 3000:3000
+
+networks:
+  default:
+    external:
+      name: network-app

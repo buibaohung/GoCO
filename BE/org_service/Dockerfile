@@ -12,6 +12,7 @@ RUN adduser -D -g '' appuser
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /org_service/bin/server/main /server
+COPY --from=builder /main_service/keys /keys
 
 USER appuser
 
