@@ -5,7 +5,7 @@ services:
     image: org_service:latest
     restart: always
     ports:
-      - 3001:3005
+      - 4001:3005
     env_file:
       - .env
 
@@ -19,7 +19,7 @@ services:
     volumes:
       - ./pg_data:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - 5433:5432
 
   webapp1:
     image: webapp_org:latest
@@ -28,7 +28,7 @@ services:
       PORT: 3000
       API_BASE_URL: https://api.org1.goco.ml
     ports:
-      - 3000:3000
+      - 4000:3000
 
 networks:
   default:
