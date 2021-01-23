@@ -9,7 +9,7 @@ CLIENT_PASS="5678"
 openssl genrsa -des3 -out ca.key -passout pass:$CA_PASS 4096
 
 # Generate CA certificate:
-openssl req -new -x509 -days 365 -key ca.key -out ca.crt -passin pass:$CA_PASS -subj "/C=VN/ST=HCM/L=HCM/O=HDT Ltd/OU=HTD Ltd/CN=fotra.com"
+openssl req -new -x509 -days 3650 -key ca.key -out ca.crt -passin pass:$CA_PASS -subj "/C=VN/ST=HCM/L=HCM/O=HDT Ltd/OU=HTD Ltd/CN=fotra.com"
 
 # Generate server key:
 openssl genrsa -des3 -out server.key -passout pass:$SERVER_PASS 4096
