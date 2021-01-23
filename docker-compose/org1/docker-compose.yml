@@ -8,6 +8,9 @@ services:
       - 4001:3005
     env_file:
       - .env
+    networks:
+      - ipfsbr
+      - network-app
 
   dbOrg1:
     image: postgres:11.5-alpine
