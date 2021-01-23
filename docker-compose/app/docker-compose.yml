@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  eos:
+    image: eos_service:latest
+    restart: always
+  app:
+    image: main_service:latest
+    restart: always
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+  postgres:
+    image: postgres:11.5-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: '${POSTGREST_DB_USER}'
+      POSTGRES_PASSWORD: '${POSTGREST_DB_PASSWORD}'
+      POSTGRES_DB: '${POSTGREST_DB_NAME}'
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  location:
+    image: location_service:latest
+    restart: always
+    ports:
+      - 3001:3001
+  webapp:
+    image: webapp:latest
+    restarts: always
+    environment:
+      PORT: 3000
+      API_BASE_URL: https://api.goco.com
+    ports:
+      - 3000:3000
+
+networks:
+  default:
+    external:
+      name: network-app
