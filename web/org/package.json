@@ -4,7 +4,7 @@
   "private": true,
   "bin": "index.js",
   "scripts": {
-    "dev": "API_BASE_URL=http://localhost:3005 node index.js",
+    "dev": "node index.js",
     "build": "API_BASE_URL=http://localhost:3005 next build",
     "telemetry_status": "next telemetry status",
     "telemetry_disable": "next telemetry disable",
