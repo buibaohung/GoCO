@@ -9,7 +9,7 @@ services:
     env_file:
       - .env
     networks:
-      - ipfsbr
+      - private-ipfs_ipfsbr
       - network-app
 
   dbOrg1:
