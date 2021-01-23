@@ -57,20 +57,23 @@ func MakeGRPCAuthMiddleware(repo repository.Repository) func(ctx context.Context
 		}
 
 		authorization := md["authorization"]
+		log.Println("xxx", authorization)
 		if len(authorization) < 1 {
 			return nil, status.Errorf(codes.InvalidArgument, "missing metadata")
 		}
 
 		privateKey := strings.TrimPrefix(authorization[0], "Bearer ")
 
+		log.Println("priv", privateKey)
 		eosClient := client.GetClient().EOS
 		pub, err := eosClient.GetPubFromPriv(ctx, &eos.GetPubFromPrivRequest{PrivateKey: privateKey})
+		log.Println("priv", pub, err)
 		if err != nil {
 			return nil, status.Errorf(codes.InvalidArgument, "invalid key")
 		}
 
 		facility, err := repo.Facility.GetByPublicKey(pub.PublicKey)
-		log.Println(err)
+		log.Println(facility, err)
 		if err != nil {
 			return nil, status.Errorf(codes.Unauthenticated, "invalid key")
 		}
