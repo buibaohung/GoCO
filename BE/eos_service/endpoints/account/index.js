@@ -10,17 +10,17 @@ exports.newEOSAccount = () => {
         let keys;
 
         var p = eos.generateKeys()
-        .then(k => {
-            keys = k
-            throw null
-        })
-        .catch(err=>{
-            if (err) {
-                reject(err)
-            } else {
+            .then(k => {
+                keys = k
                 throw null
-            }
-        })
+            })
+            .catch(err => {
+                if (err) {
+                    reject(err)
+                } else {
+                    throw null
+                }
+            })
 
         // we need to to get accountName many times. promise has to call reject
         for (let i = 0; i < 5; i++) {
@@ -31,12 +31,12 @@ exports.newEOSAccount = () => {
                 }
                 accountName = a
                 console.log(i, accountName);
-                
+
                 return eos.createAccount(accountName, keys.publicKeys.owner)
             });
         }
 
-        p.then(tx=>{
+        p.then(tx => {
             console.log("transaction", tx);
 
             let resp = {
@@ -44,13 +44,13 @@ exports.newEOSAccount = () => {
                 privateKey: keys.privateKeys.owner,
                 publicKey: keys.publicKeys.owner
             }
-            
+
             resolve(resp)
         })
-        .catch(error=>{
-            console.log(error);
-            reject(error)
-        })
+            .catch(error => {
+                console.log(error);
+                reject(error)
+            })
     })
 }
 
@@ -58,7 +58,7 @@ exports.getPubFromPriv = (privateKey) => {
     if (!eos.isValidPrivate(privateKey)) {
         return null
     }
-    
+
     return eos.getPublicKeyFromPrivateKey(privateKey)
 }
 
@@ -68,7 +68,7 @@ exports.getNameFromPub = (pub) => {
 
 exports.getPubFromName = async (name) => {
     let acccount = await eos.rpc.get_account(name)
-    let permission = acccount.permissions.find(p => p.perm_name == "active")
+    let permission = acccount.permissions.find(p => p.perm_name == "owner")
     if (!permission) {
         throw "can't find permission"
     }
