@@ -9,7 +9,7 @@ services:
     env_file:
       - .env
     networks:
-      - private-ipfs_ipfsbr
+      - ipfsbr
       - network-app
 
   dbOrg1:
@@ -37,3 +37,6 @@ networks:
   default:
     external:
       name: network-app
+  ipfsbr:
+    external:
+      name: private-ipfs_ipfsbr
