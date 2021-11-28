@@ -31,8 +31,8 @@ type GrpcClient struct {
 
 func New() (*GrpcClient, func()) {
 	// eos service
-	EOSName = util.GetEnv("EOS_ACCOUNT_NAME", "fotra1235122")
-	EOSPrivKey = util.GetEnv("EOS_PRIVATE_KEY", "5JGEqUwHHoyfUc6pBJVkREmFVwJs7hYVn76XuZJaKa7VxRL2q1N")
+	EOSName = util.GetEnv("EOS_ACCOUNT_NAME", "awxqlxnpixsu")
+	EOSPrivKey = util.GetEnv("EOS_PRIVATE_KEY", "5J1H3JVud4xRqoCQ2TLq8N2Q6eaqhiWdxK79U9LPwWJjesurRpu")
 
 	eosServHost := util.GetEnv("SERV_EOS_HOST", "localhost")
 	eosServPort := util.GetEnv("SERV_EOS_PORT", "50051")

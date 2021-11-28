@@ -11,9 +11,9 @@ var ipfsShell *shell.Shell
 
 // Init .
 func Init() {
-	ipfsIP := util.GetEnv("IPFS_IP", "34.67.61.172")
+	ipfsIP := util.GetEnv("IPFS_IP", "localhost")
 	ipfsPort := util.GetEnv("IPFS_PORT", "5001")
-	IPFSBaseURL = util.GetEnv("IPFS_BASE_URL", "https://ipfs.fotra.tk/ipfs")
+	IPFSBaseURL = util.GetEnv("IPFS_BASE_URL", "https://localhost:5001")
 	ipfsShell = shell.NewShell(ipfsIP + ":" + ipfsPort)
 }
 

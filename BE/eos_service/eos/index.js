@@ -12,7 +12,7 @@ class EOS {
     }
 
     _initProperties() {
-        this.contract = getEnv("CONTRACT", "dgybsotylyeq");
+        this.contract = getEnv("CONTRACT", "sgexlcsqpwtc");
 
         let rpcEndpointStr = getEnv("RPC_ENDPOINTS", "https://api.testnet.eos.io");
         this.rpcEndpoints = rpcEndpointStr.split(",")
@@ -47,7 +47,7 @@ class EOS {
         }
 
         // init api
-        let contractKeyStr = getEnv("CONTRACT_KEYS", "5JjSwBbqh2hZPQbMgJ4cJkYDemGXbUy8YAiwCSreZMwd4EobHKB");
+        let contractKeyStr = getEnv("CONTRACT_KEYS", "5J2vZahfBgD2cVLUtuBPw4kHmKTouevE6q4kC2MuSM11bitg5EM");
         if (!contractKeyStr) {
             throw "Miss CONTRACT_KEYS"
         }
@@ -137,7 +137,7 @@ class EOS {
                 name: _functionName,
                 authorization: [{
                     actor: _eosAccountName,
-                    permission: 'active',
+                    permission: 'owner',
                 }],
                 data: _params,
             }]
@@ -153,7 +153,7 @@ class EOS {
             name: 'newaccount',
             authorization: [{
                 actor: _creator,
-                permission: 'active',
+                permission: 'owner',
             }],
             data: {
                 creator: _creator,
@@ -167,7 +167,7 @@ class EOS {
                     accounts: [],
                     waits: []
                 },
-                active: {
+                owner: {
                     threshold: 1,
                     keys: [{
                         key: _publicKey,
@@ -184,7 +184,7 @@ class EOS {
             name: 'buyrambytes',
             authorization: [{
                 actor: _creator,
-                permission: 'active',
+                permission: 'owner',
             }],
             data: {
                 payer: _creator,
@@ -198,7 +198,7 @@ class EOS {
             name: 'delegatebw',
             authorization: [{
                 actor: _creator,
-                permission: 'active',
+                permission: 'owner',
             }],
             data: {
                 from: _creator,
@@ -231,7 +231,7 @@ class EOS {
 
     async getPublicKeyFromAccount(account) {
         let acc = await this.rpc.get_account(account)
-        let permission = acc.permissions.find(per => per.perm_name === "active")
+        let permission = acc.permissions.find(per => per.perm_name === "owner")
         return permission.required_auth.keys[0].key
     }
 

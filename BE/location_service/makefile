@@ -10,8 +10,8 @@ build:
 
 local-db:
 	@echo "Setup db..."
-	@docker-compose -f docker-compose/db/docker-compose.yml -p $(PROJECT_NAME) down
-	@docker-compose -f docker-compose/db/docker-compose.yml -p $(PROJECT_NAME) up -d
+	@docker-compose -f docker-compose.yml -p $(PROJECT_NAME) down
+	@docker-compose -f docker-compose.yml -p $(PROJECT_NAME) up -d
 	@echo "Waiting for database connection..."
 	@while ! docker exec $(PROJECT_NAME)_postgres_1 pg_isready -h localhost -p 5432 > /dev/null; do \
 		sleep 1; \
