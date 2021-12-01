@@ -47,7 +47,7 @@ class EOS {
         }
 
         // init api
-        let contractKeyStr = getEnv("CONTRACT_KEYS", "5J2vZahfBgD2cVLUtuBPw4kHmKTouevE6q4kC2MuSM11bitg5EM");
+        let contractKeyStr = getEnv("CONTRACT_KEYS", "5JwjnTWhk5GSXdi36DtgHPCmhdq29WyW1SudZ4BcspXVCCW8sRh");
         if (!contractKeyStr) {
             throw "Miss CONTRACT_KEYS"
         }
