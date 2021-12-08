@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7d55cfc8-929b-49a5-a3c4-332ba6cf80e0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/.buckconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/.flowconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/.prettierrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/.watchmanconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/__tests__/App-test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/BUCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/build_defs.bzl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/debug.keystore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/debug/java/com/awesomeproject/ReactNativeFlipper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/java/com/awesomeproject/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/java/com/awesomeproject/MainApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject-tvOS/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject-tvOSTests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject.xcodeproj/xcshareddata/xcschemes/AwesomeProject-tvOS.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject.xcodeproj/xcshareddata/xcschemes/AwesomeProject.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject/AppDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject/AppDelegate.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject/Base.lproj/LaunchScreen.xib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject/Images.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject/Images.xcassets/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProject/main.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProjectTests/AwesomeProjectTests.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/AwesomeProjectTests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/Podfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/ios/Podfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/metro.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/AwesomeProject/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/BUCK" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/BUCK" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/src/main/java/com/fotrabuss/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/src/main/java/com/fotrabuss/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/src/main/java/com/fotrabuss/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/src/main/java/com/fotrabuss/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/android/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss.xcodeproj/xcshareddata/xcschemes/FotraBuss-tvOS.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss.xcodeproj/xcshareddata/xcschemes/FotraBuss-tvOS.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss.xcodeproj/xcshareddata/xcschemes/FotraBuss.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss.xcodeproj/xcshareddata/xcschemes/FotraBuss.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss/AppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss/AppDelegate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss/Base.lproj/LaunchScreen.xib" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss/Base.lproj/LaunchScreen.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBuss/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBussTests/FotraBussTests.m" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/ios/FotraBussTests/FotraBussTests.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/src/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/src/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/GoCOBuss/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/GoCOBuss/yarn.lock" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d55cfc8-929b-49a5-a3c4-332ba6cf80e0" name="Default Changelist" comment="" />
+      <created>1638966236799</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638966236799</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <layout>
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32980973" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Resources Explorer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
+    </layout>
+  </component>
+</project>

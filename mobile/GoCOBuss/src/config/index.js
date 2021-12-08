@@ -1,4 +1,4 @@
 export default {
-    apiEndpoint: "https://api.fotra.cf",
-    mainApiEndpoint: "https://api.fotra.tk",
+    apiEndpoint: "http://34.125.115.98:3004/",
+    mainApiEndpoint: "http://34.125.115.98:3003/",
 }

@@ -1,0 +1,4 @@
+[1] https://blog.codeminer42.com/build-your-first-app-with-flutter-getting-data-from-api-c9fb4c2a6812
+[2] https://github.com/hjJunior/flutter-fetch-data-from-api/tree/master/lib
+[3] https://medium.com/flutterpub/architecting-your-flutter-project-bd04e144a8f1
+[4] https://github.com/SAGARSURI/MyMovies
