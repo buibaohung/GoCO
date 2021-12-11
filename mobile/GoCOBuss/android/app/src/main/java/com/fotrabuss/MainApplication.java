@@ -1,4 +1,4 @@
-package com.fotrabuss;
+package com.gocobuss;
 
 import android.app.Application;
 
