@@ -1,5 +1,5 @@
 {
-  "name": "GoCOBuss",
+  "name": "FotraBuss",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
     "eosjs-rn": "^20.0.0",
     "jwt-decode": "^2.2.0",
     "react": "16.8.3",
-    "react-native": "^0.59.10",
+    "react-native": "0.59.10",
     "react-native-camera-kit": "^8.0.2",
     "react-native-dialog-input": "^1.0.7",
     "react-native-geolocation-service": "2.0.1",

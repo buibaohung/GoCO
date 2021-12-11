@@ -5,7 +5,7 @@ import Navigation from "./navigation";
 export default class MyApp extends Component {
     render() {
         return (
-            <Navigation uriPrefix="gocobuss://" />
+            <Navigation uriPrefix="fotrabuss://" />
         )
     }
 }
