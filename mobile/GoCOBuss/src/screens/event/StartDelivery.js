@@ -14,32 +14,32 @@ export default class StartDelivery extends Component {
         selectedTransporter: null,
     }
 
-    constructor(props){
+    constructor(props) {
         super(props)
 
         this.lotID = props.navigation.getParam("lotID", "")
     }
 
-    componentDidMount(){
+    componentDidMount() {
         getFacilityByType()
-        .then(({data: {facilities}}) => {
-            this.setState({
-                facilities: facilities.filter(f => f.type != "TRANSPORTATION_CARRIER")
+            .then(({ data: { facilities } }) => {
+                this.setState({
+                    facilities: facilities.filter(f => f.type != "TRANSPORTATION_CARRIER")
+                })
             })
-        })
-        .catch(err => {
-            let errMsg = handleAPIError(err)
-            showError(errMsg)
-        })
+            .catch(err => {
+                let errMsg = handleAPIError(err)
+                showError(errMsg)
+            })
 
         getFacilityByType("TRANSPORTATION_CARRIER")
-        .then(({data: {facilities}}) => {
-            this.setState({transporters: facilities})
-        })
-        .catch(err => {
-            let errMsg = handleAPIError(err)
-            showError(errMsg)
-        })
+            .then(({ data: { facilities } }) => {
+                this.setState({ transporters: facilities })
+            })
+            .catch(err => {
+                let errMsg = handleAPIError(err)
+                showError(errMsg)
+            })
     }
 
     renderFacility = (facility, onPress, selected) => {
@@ -62,20 +62,20 @@ export default class StartDelivery extends Component {
     }
 
     selectFacility = (facility) => {
-        this.setState({selectedFacility: facility})
+        this.setState({ selectedFacility: facility })
     }
 
     selectTransporter = (transporter) => {
-        this.setState({selectedTransporter: transporter})
+        this.setState({ selectedTransporter: transporter })
     }
 
     handle = async () => {
-        let {selectedFacility, selectedTransporter} = this.state
+        let { selectedFacility, selectedTransporter } = this.state
         if (!selectedFacility || !selectedTransporter) {
             return showError("Please select facility & transporter")
         }
 
-        let {navigation} = this.props
+        let { navigation } = this.props
 
         try {
             let myFacility = await getFacility()
@@ -86,10 +86,10 @@ export default class StartDelivery extends Component {
                 to_facility_id: selectedFacility.id,
                 delivered_by_facility_id: selectedTransporter.id,
             })
-    
+
             navigation.goBack()
-            
-            let callback = navigation.getParam("callback", ()=>{})
+
+            let callback = navigation.getParam("callback", () => { })
             callback()
         } catch (error) {
             let errMsg = handleAPIError(error)
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     },
     btnOK: {
         width: "100%",
-        backgroundColor: "#00c853",
+        backgroundColor: "#ff8000",
         marginVertical: 2,
         alignItems: "center",
     },

@@ -13,52 +13,52 @@ export default class Aggregation extends Component {
         selectedProduct: null,
     }
 
-    constructor(props){
+    constructor(props) {
         super(props)
 
         this.lotID = props.navigation.getParam("lotID", "")
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.setState({
-            lots: [{id: this.lotID}],
+            lots: [{ id: this.lotID }],
         })
 
         getFacility()
-        .then(facility => {
-            return getProducts(facility.id)
-        })
-        .then(({data}) => {
-            this.setState({
-                products: data.products,
+            .then(facility => {
+                return getProducts(facility.id)
             })
-        })
-        .catch(err => {
-            console.error(err);
-            
-            let errMsg = handleAPIError(err)
-            showError(errMsg)
-        })
+            .then(({ data }) => {
+                this.setState({
+                    products: data.products,
+                })
+            })
+            .catch(err => {
+                console.error(err);
+
+                let errMsg = handleAPIError(err)
+                showError(errMsg)
+            })
     }
 
     removeLot = (lotID) => {
         let lots = [...this.state.lots]
-        lots = lots.filter(lot => lot.id !==lotID)
-        this.setState({lots})
+        lots = lots.filter(lot => lot.id !== lotID)
+        this.setState({ lots })
     }
 
     newLot = (lotID) => {
         let lots = [...this.state.lots]
-        lots.push({id: lotID})
+        lots.push({ id: lotID })
 
         // filter duplicate
         lots = lots.filter((value, index, self) => self.findIndex(v => v.id === value.id) === index)
 
-        this.setState({lots})
+        this.setState({ lots })
     }
 
     handle = async () => {
-        let {selectedProduct, lots} = this.state
+        let { selectedProduct, lots } = this.state
         if (!selectedProduct) {
             return showError("Please select product")
         }
@@ -72,7 +72,7 @@ export default class Aggregation extends Component {
         });
 
         try {
-            let {data: {new_product_item_id}} = await createEvent({
+            let { data: { new_product_item_id } } = await createEvent({
                 name: "AGGREGATION",
                 product_item_id: this.lotID,
                 product_item_ids,
@@ -86,17 +86,17 @@ export default class Aggregation extends Component {
                         text: 'OK',
                         onPress: () => {
                             this.props.navigation.goBack()
-            
-                            let callback = this.props.navigation.getParam("callback", ()=>{})
+
+                            let callback = this.props.navigation.getParam("callback", () => { })
                             callback()
                         },
                     },
                 ],
-                {cancelable: false},
+                { cancelable: false },
             );
         } catch (error) {
             console.error(error);
-            
+
             let errMsg = handleAPIError(error)
             showError(errMsg)
         }
@@ -123,7 +123,7 @@ export default class Aggregation extends Component {
         return (
             <TouchableOpacity
                 style={styles.product}
-                onPress={() => this.setState({selectedProduct: product})}
+                onPress={() => this.setState({ selectedProduct: product })}
             >
                 <Text style={styles.productText}>{product.name}</Text>
                 {
@@ -151,7 +151,7 @@ export default class Aggregation extends Component {
                     />
                     <TouchableOpacity
                         style={styles.btnAdd}
-                        onPress={() => this.props.navigation.navigate("AddLot", {callback: this.newLot})}
+                        onPress={() => this.props.navigation.navigate("AddLot", { callback: this.newLot })}
                     >
                         <Text style={styles.btnAddText}>+</Text>
                     </TouchableOpacity>
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
         flex: 1,
         marginHorizontal: 16,
     },
-    section:{
+    section: {
         alignItems: "center",
         justifyContent: "flex-start",
         flex: 1,
@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
     },
     btnOK: {
         width: "100%",
-        backgroundColor: "#00c853",
+        backgroundColor: "#ff8000",
         marginVertical: 2,
         alignItems: "center",
     },

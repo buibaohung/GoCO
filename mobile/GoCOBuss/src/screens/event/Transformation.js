@@ -21,33 +21,33 @@ export default class Transformation extends Component {
         price: 0,
     }
 
-    constructor(props){
+    constructor(props) {
         super(props)
 
         this.lotID = props.navigation.getParam("lotID", "")
     }
 
-    componentDidMount(){
+    componentDidMount() {
         getFacility()
-        .then(facility => {
-            return getProducts(facility.id)
-        })
-        .then(({data}) => {
-            this.setState({
-                products: data.products,
+            .then(facility => {
+                return getProducts(facility.id)
             })
-        })
-        .catch(err => {
-            let errMsg = handleAPIError(err)
-            showError(errMsg)
-        })
+            .then(({ data }) => {
+                this.setState({
+                    products: data.products,
+                })
+            })
+            .catch(err => {
+                let errMsg = handleAPIError(err)
+                showError(errMsg)
+            })
     }
 
     renderProduct = (product, selected) => {
         return (
             <TouchableOpacity
                 style={styles.product}
-                onPress={() => this.setState({selectedProduct: product})}
+                onPress={() => this.setState({ selectedProduct: product })}
             >
                 <Text style={styles.productText}>{product.name}</Text>
                 {
@@ -64,23 +64,23 @@ export default class Transformation extends Component {
 
     setExpiryDate = (event, expiryDate) => {
         expiryDate = expiryDate || this.state.expiryDate;
-    
+
         this.setState({
             show: Platform.OS === 'ios' ? true : false,
             expiryDate,
-            
+
             isDialogVisible: true,
         });
     }
 
     handle = async () => {
-        let {selectedProduct, price, expiryDate} = this.state
+        let { selectedProduct, price, expiryDate } = this.state
         if (!selectedProduct) {
             return showError("Please select product")
         }
 
         try {
-            let {data: {new_product_item_id}} = await createEvent(
+            let { data: { new_product_item_id } } = await createEvent(
                 {
                     name: "TRANSFORMATION",
                     product_item_id: this.lotID,
@@ -99,13 +99,13 @@ export default class Transformation extends Component {
                         text: 'OK',
                         onPress: () => {
                             this.props.navigation.goBack()
-            
-                            let callback = this.props.navigation.getParam("callback", ()=>{})
+
+                            let callback = this.props.navigation.getParam("callback", () => { })
                             callback()
                         },
                     },
                 ],
-                {cancelable: false},
+                { cancelable: false },
             );
         } catch (error) {
             let errMsg = handleAPIError(error)
@@ -124,7 +124,7 @@ export default class Transformation extends Component {
                     keyExtractor={item => item.id}
                     extraData={this.state.selectedProduct}
                 />
-                { this.state.show && <DateTimePicker
+                {this.state.show && <DateTimePicker
                     value={this.state.expiryDate}
                     mode={this.state.mode}
                     is24Hour={true}
@@ -135,12 +135,12 @@ export default class Transformation extends Component {
                     isDialogVisible={this.state.isDialogVisible}
                     title={"Price"}
                     message={"Price of the new lot"}
-                    submitInput={ (price) => this.setState({isDialogVisible: false,price: parseInt(price)}, ()=>this.handle()) }
-                    closeDialog={ () => this.setState({isDialogVisible: false}) }
+                    submitInput={(price) => this.setState({ isDialogVisible: false, price: parseInt(price) }, () => this.handle())}
+                    closeDialog={() => this.setState({ isDialogVisible: false })}
                 />
                 <TouchableOpacity
                     style={styles.btnOK}
-                    onPress={() => this.setState({show: true})}
+                    onPress={() => this.setState({ show: true })}
                 >
                     <Text style={styles.btnOKText}>Set Expiry Date</Text>
                 </TouchableOpacity>
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     },
     btnOK: {
         width: "100%",
-        backgroundColor: "#00c853",
+        backgroundColor: "#ff8000",
         marginVertical: 2,
         alignItems: "center",
     },
