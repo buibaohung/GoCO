@@ -1,0 +1,118 @@
+import React, {Component} from 'react';
+import {PermissionsAndroid, Platform, StyleSheet, Text, View, Alert} from 'react-native';
+import { withNavigationFocus } from 'react-navigation';
+import {CameraKitCameraScreen} from "react-native-camera-kit";
+import Geolocation from 'react-native-geolocation-service';
+import { removeFacility, removeToken } from '../utils/user'
+
+class QRScan extends Component {
+    state = {
+        hasCameraPermission: false,
+    }
+
+    coords = {
+        latitude: 0,
+        longitude: 0,
+    }
+
+    componentDidMount(){
+        let that = this
+        if (Platform.OS === "android") {
+            this.requestCameraPermission(PermissionsAndroid.PERMISSIONS.CAMERA, "App needs access to your camera")
+            .then(()=>{
+                that.setState({hasCameraPermission: true});
+                return that.requestCameraPermission(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION, "App needs access to your location")
+            })
+            .then(() => that.watchPosition())
+        }
+    }
+
+    componentWillUnmount(){
+        if (this.watchID) {
+            Geolocation.clearWatch(this.watchID)
+        }
+    }
+
+    watchPosition = () => {
+        let that = this
+        this.watchID = Geolocation.watchPosition(
+            (position) => {
+                that.coords = position.coords
+            },
+            (error) => {
+                console.log(error.code, error.message);
+            },
+            {
+                interval: 10000
+            }
+        )
+    }
+
+    requestCameraPermission = (permission, message) => {
+        var p = Promise.reject();
+
+        for (let i = 0; i < 500; i++) {
+            p = p.catch(()=>{
+                // try
+                return PermissionsAndroid.request(
+                    permission,
+                    {
+                        'title': 'Permission',
+                        'message': message,
+                    }
+                )
+            })
+            .then((granted) => {
+                if (granted !== PermissionsAndroid.RESULTS.GRANTED){
+                    throw "not granted"
+                }
+
+                return PermissionsAndroid.RESULTS.GRANTED
+            })
+        }
+
+        return p
+    }
+
+    onBottomButtonPressed(event) {
+        const captureImages = JSON.stringify(event.captureImages);
+        if (event.type == "left") {
+            Promise.all([
+                removeFacility(),
+                removeToken(),
+            ])
+            .then(() => {
+                this.props.navigation.navigate('Auth');
+            })
+        }
+    }
+
+    detectQR = (code) => {
+        this.props.navigation.navigate('SelectEvent', {lotID: code});
+    }
+
+    render() {
+        if (!this.state.hasCameraPermission || !this.props.isFocused) {
+            return null
+        }
+
+        return (
+            <CameraKitCameraScreen
+                actions={{ rightButtonText: 'Done', leftButtonText: 'Signout' }}
+                onBottomButtonPressed={(event) => this.onBottomButtonPressed(event)}
+                scanBarcode={true}
+                laserColor={"blue"}
+                frameColor={"yellow"}
+
+                onReadCode={(event) => this.detectQR(event.nativeEvent.codeStringValue)} //optional
+                hideControls={false}           //(default false) optional, hide buttons and additional controls on top and bottom of screen
+                showFrame={true}   //(default false) optional, show frame with transparent layer (qr code or barcode will be read on this area ONLY), start animation for scanner,that stoped when find any code. Frame always at center of the screen
+                offsetForScannerFrame = {10}   //(default 30) optional, offset from left and right side of the screen
+                heightForScannerFrame = {1000}  //(default 200) optional, change height of the scanner frame
+                colorForScannerFrame = {'red'} //(default white) optional, change colot of the scanner frame
+            />
+        );
+    }
+}
+
+export default withNavigationFocus(QRScan)
