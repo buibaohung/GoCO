@@ -635,7 +635,7 @@ class OverViewProductState extends State<OverViewProduct> {
               width: Helpers.resizeByWidth(context, 200),
               child: new Divider(color: Colors.black),
             ),
-            listRecommend.products.length > 0
+            listRecommend !=null && listRecommend.products !=null && listRecommend.products.length > 0
                 ? CarouselSlider(
                     autoPlay: true,
                     items: listRecommend.products

@@ -29,14 +29,14 @@ class EosClientService {
     pr.getProgresDialog.show();
     List<Authorization> auth = [
       Authorization()
-        ..permission = 'active'
+        ..permission = 'owner'
         ..actor = from
     ];
 
     Map data = {
       'from': from,
       'to': to,
-      'quantity': '${eos.toStringAsFixed(4)} EOS',
+      'quantity': '${eos.toStringAsFixed(4)} TNT',
       'memo': message
     };
     print(data.toString());
@@ -49,6 +49,9 @@ class EosClientService {
         ..data = data
     ];
     Transaction transaction = Transaction()..actions = actions;
+    _eosClient.getAccount('sgexlcsqpwtc').then((value){
+      print(value.toJson());
+    });
     _eosClient.pushTransaction(transaction, broadcast: true).then((trx) {
       if (trx != null) {
         pr.getProgresDialog.hide();
@@ -57,6 +60,7 @@ class EosClientService {
       }
     }).catchError((err) {
       ErrorResponse errModel = ErrorResponse.fromMap(json.decode(err));
+      print('errorEos: ${errModel.toMap()}');
       pr.getProgresDialog.hide();
       DialogInfo().showImageDialog(
           context, '', errModel.message, true, ListIcon.ic_error);
@@ -67,7 +71,7 @@ class EosClientService {
   void functionHi(String contract, String message) {
     List<Authorization> auth = [
       Authorization()
-        ..permission = 'active'
+        ..permission = 'owner'
         ..actor = 'sgexlcsqpwtc'
     ];
 
@@ -102,7 +106,7 @@ class EosClientService {
     pr.getProgresDialog.show();
     List<Authorization> auth = [
       Authorization()
-        ..permission = 'active'
+        ..permission = 'owner'
         ..actor = account
     ];
 
@@ -162,7 +166,7 @@ class EosClientService {
     pr.getProgresDialog.show();
     List<Authorization> auth = [
       Authorization()
-        ..permission = 'active'
+        ..permission = 'owner'
         ..actor = account
     ];
 
@@ -203,7 +207,7 @@ class EosClientService {
     pr.getProgresDialog.show();
     List<Authorization> auth = [
       Authorization()
-        ..permission = 'active'
+        ..permission = 'owner'
         ..actor = account
     ];
 
@@ -244,7 +248,7 @@ class EosClientService {
     pr.getProgresDialog.show();
     List<Authorization> auth = [
       Authorization()
-        ..permission = 'active'
+        ..permission = 'owner'
         ..actor = account
     ];
 
@@ -284,7 +288,7 @@ class EosClientService {
     pr.getProgresDialog.show();
     List<Authorization> auth = [
       Authorization()
-        ..permission = 'active'
+        ..permission = 'owner'
         ..actor = account
     ];
 
