@@ -14,18 +14,18 @@ export default class Login extends Component {
         orgs: [
             {
                 name: "Org 0",
-                endpoint: "http://34.125.115.98:3005",
+                endpoint: "http://161.97.112.69:3005",
             },
             {
                 name: "Org 1",
-                endpoint: "http://34.125.115.98:3005",
+                endpoint: "http://161.97.112.69:3005",
             },
             {
                 name: "Org 2",
-                endpoint: "http://34.125.115.98:3005",
+                endpoint: "http://161.97.112.69:3005",
             },
         ],
-        selectedOrg: "http://34.125.115.98:3005",
+        selectedOrg: "http://161.97.112.69:3005",
     }
 
     signin = () => {

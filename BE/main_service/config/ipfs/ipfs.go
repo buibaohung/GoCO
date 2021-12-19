@@ -13,7 +13,7 @@ var ipfsShell *shell.Shell
 func Init() {
 	ipfsIP := util.GetEnv("IPFS_IP", "localhost")
 	ipfsPort := util.GetEnv("IPFS_PORT", "5001")
-	IPFSBaseURL = util.GetEnv("IPFS_BASE_URL", "http://34.125.115.98:8082/ipfs")
+	IPFSBaseURL = util.GetEnv("IPFS_BASE_URL", "http://161.97.112.69:8082/ipfs") //abc
 	ipfsShell = shell.NewShell(ipfsIP + ":" + ipfsPort)
 }
 
