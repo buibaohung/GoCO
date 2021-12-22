@@ -1,6 +1,6 @@
 class NetworkBase {
   static final String Base_URL =
-      "http://161.97.112.69:3000/"; //abc
+      "https://api.goco.live/"; //abc
 
   static final Map<String, String> Base_header = {
     "Content-Type": "application/json"

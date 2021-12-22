@@ -14,18 +14,18 @@ export default class Login extends Component {
         orgs: [
             {
                 name: "Org 0",
-                endpoint: "http://161.97.112.69:3005",
+                endpoint: "https://apifacility.goco.live",
             },
             {
                 name: "Org 1",
-                endpoint: "http://161.97.112.69:3005",
+                endpoint: "https://apifacility.goco.live",
             },
             {
                 name: "Org 2",
-                endpoint: "http://161.97.112.69:3005",
+                endpoint: "https://apifacility.goco.live",
             },
         ],
-        selectedOrg: "http://161.97.112.69:3005",
+        selectedOrg: "https://apifacility.goco.live",
     }
 
     signin = () => {
