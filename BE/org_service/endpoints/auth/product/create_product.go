@@ -33,16 +33,19 @@ func MakeCreateProductEndpoint(repo repository.Repository) model.Endpoint {
 
 		// upload avatar to ipfs
 		ipfsShell := ipfs.GetIpfsShell()
-		f, err := req.Avatar.Open()
-		if err != nil {
-			return nil, util.NewError(err, http.StatusNotAcceptable, 1050, "Error open avatar")
-		}
 
-		ipfsHash, err := ipfsShell.Add(f)
-		if err != nil {
-			return nil, util.NewError(err, http.StatusNotAcceptable, 1060, "Error save avatar")
-		}
-		req.Product.Avatar = ipfsHash
+		if req.Avatar != nil { //aaa
+			f, err := req.Avatar.Open()
+			if err != nil {
+				return nil, util.NewError(err, http.StatusNotAcceptable, 1050, "Error open avatar")
+			}
+
+			ipfsHash, err := ipfsShell.Add(f)
+			if err != nil {
+				return nil, util.NewError(err, http.StatusNotAcceptable, 1060, "Error save avatar")
+			}
+			req.Product.Avatar = ipfsHash
+		} //aaa
 
 		// upload images to ipfs
 		images := []*model.ProductImage{}
