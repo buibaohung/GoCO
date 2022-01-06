@@ -17,6 +17,8 @@ const nextConfig = {
     poweredByHeader: false,
     env: {
         API_BASE_URL: process.env.API_BASE_URL,
+        IPFS_BASE_URL: process.env.IPFS_BASE_URL,
+        IPFS_IP: process.env.IPFS_IP,
     },
     webpack: (config, { isServer }) => {
         if (isServer) {
@@ -33,7 +35,7 @@ const nextConfig = {
                 },
                 ...(typeof origExternals[0] === 'function' ? [] : origExternals),
             ];
-    
+
             config.module.rules.unshift({
                 test: antStyles,
                 use: 'null-loader',
@@ -63,9 +65,9 @@ module.exports = withPlugins(
                     localIdentName: '[path]___[local]___[hash:base64:5]',
                     getLocalIdent: (loaderContext, localIdentName, localName, options) => {
                         const fileName = path.basename(loaderContext.resourcePath)
-                        if(fileName.indexOf('global.scss') !== -1){
+                        if (fileName.indexOf('global.scss') !== -1) {
                             return localName
-                        }else{
+                        } else {
                             const name = fileName.replace(/\.[^/.]+$/, "")
                             const className = `${name}__${localName}`
 
@@ -73,7 +75,7 @@ module.exports = withPlugins(
                             hash.update(className);
                             let hashDigest = hash.digest("base64").substr(0, 5)
                             hashDigest = hashDigest.replace(new RegExp("[^a-zA-Z0-9\\-_\u00A0-\uFFFF]", "g"), "-").replace(/^((-?[0-9])|--)/, "_$1");
-                            
+
                             return process.env.NODE_ENV == "production" ? `${hashDigest}` : `${className}`
                         }
                     },

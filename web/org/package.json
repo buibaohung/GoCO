@@ -4,8 +4,8 @@
   "private": true,
   "bin": "index.js",
   "scripts": {
-    "dev": "API_BASE_URL=https://apifacility.goco.live node index.js",
-    "build": "API_BASE_URL=https://apifacility.goco.live next build",
+    "dev": "API_BASE_URL=https://apifacility.goco.live IPFS_BASE_URL=https://ipfs.goco.live IPFS_IP=http://161.97.112.69:8082 node index.js",
+    "build": "API_BASE_URL=https://apifacility.goco.live IPFS_BASE_URL=https://ipfs.goco.live IPFS_IP=http://161.97.112.69:8082 next build",
     "telemetry_status": "next telemetry status",
     "telemetry_disable": "next telemetry disable",
     "analyze": "ANALYZE=true next build",
